@@ -11,3 +11,8 @@ class Product(models.Model):
     def __str__(self):
         return "{} - {}".format(self.name, self.description)
 
+    @property
+    def is_expensive(self):
+        if self.price > 1000:
+            return True
+        return False
